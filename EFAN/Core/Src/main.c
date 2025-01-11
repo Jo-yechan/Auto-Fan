@@ -63,7 +63,7 @@ static void MX_TIM3_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-float TEM;
+float TEM; //Temperature
 
 /* USER CODE END 0 */
 
@@ -120,11 +120,11 @@ int main(void)
 
 	  //Temperature is below 21
 	  	  if(TEM<21){
-	  		  //LED1 ON
-	  		  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_9,0);
-	  		  HAL_GPIO_WritePin(GPIOC,GPIO_PIN_7,0);
-	  		  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_8,0);
-	  		  //Run the Motor at Low speed
+	  		  //ALL LED OFF 
+	  		  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_9,0); // LED1
+	  		  HAL_GPIO_WritePin(GPIOC,GPIO_PIN_7,0); // LED2
+	  		  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_8,0); // LED3
+	  		  //Motor Stop
 	  		  Motor_Stop();
 	  	  }
 
